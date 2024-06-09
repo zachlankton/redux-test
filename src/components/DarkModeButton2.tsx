@@ -1,7 +1,7 @@
-import { useGlobalState } from "../hooks/useGlobalState";
+import { usePersistentKvState } from "../hooks/useKvState";
 
 export function DarkModeButton2() {
-  const [darkMode, setDarkMode] = useGlobalState("darkMode", false);
+  const [darkMode, setDarkMode] = usePersistentKvState("darkMode", false);
   return (
     <button onClick={() => setDarkMode(!darkMode)}>
       Toggle Dark Mode {darkMode ? "Off" : "On"}
